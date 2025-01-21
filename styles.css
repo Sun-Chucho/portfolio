@@ -1,0 +1,307 @@
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  padding: 10px;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-top: 5px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 9%, rgba(24, 36, 71, 1) 43%, rgba(77, 22, 105, 1) 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;   /* Make the navbar sticky */
+  top: 0;             /* Stick it to the top of the viewport */
+  z-index: 1000;      /* Ensure the navbar stays above other elements */
+  margin: 10px;
+}
+
+
+/* Circular and responsive logo */
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a {
+  
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    padding: 5px;
+    border-radius: 20%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-links a:hover {
+  color: #f9f871;
+  background: rgba(0, 0, 0, 0.7); /* Black with transparency for the glass effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Glassy border */
+}
+
+/* Hamburger menu icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    background: #845ec2;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height:auto;
+  
+}
+
+.home-content { display: flex; gap: 30px; width: 80%; padding: 20px; background: rgba(255, 255, 255, 0.1); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); border-radius: 20px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18); }
+
+.highlight { color: #cb07ae; /* Adjust this color as needed */ }
+.text {
+  max-width: 60%;
+}
+.image-container{
+  flex: 0 0 40%; display: flex; justify-content: center; align-items: center; }
+.profile-image {
+  border-radius: 10%;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(24,36,71,0.6), 0 0 30px rgba(77,22,105,0.6);
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;  /* Stack items vertically */
+    align-items: center;     /* Center align the content */
+    gap: 20px;               /* Adjust the gap between the text and image */
+  }
+
+  .image-container {
+    order: 2;  /* Ensure the image comes below the text */
+    width: 100%;  /* Allow the image to take full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    order: 1;  /* Ensure the text stays above the image */
+    max-width: 100%;  /* Ensure the text doesn't overflow */
+  }
+}
+
+.Experience {
+  display: grid;
+  gap: 40px; /* Adjust the gap between columns and rows */
+  padding: 3rem;
+  margin: 50px;
+  grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+}
+
+.about-box {
+  background: #b9b6b6;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(255,255,255,0.6), 5px 5px 15px rgba(24,36,71,0.6), 5px 5px 15px rgba(77,22,105,0.6), 
+              -5px -5px 15px rgba(255,255,255,0.6), -5px -5px 15px rgba(24,36,71,0.6), -5px -5px 15px rgba(77,22,105,0.6);
+  padding: 1.5rem;
+  text-align: center;
+  width: 80%; /* Ensure the box takes full width of its grid column */
+}
+@media (max-width: 768px) { .Experience { grid-template-columns: 1fr; /* One column layout */ } }
+
+.about-box h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.services {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem;
+  flex-wrap: wrap;
+  background: #e0e0e0; /* Light background for the neumorphic effect */
+  margin:20px;
+  border-radius: 20px;
+}
+
+.service-card {
+  background: #e0e0e0; /* Matching background for the card */
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 
+      8px 8px 16px #bebebe,  /* Darker shadow for bottom-right */
+      -8px -8px 16px #ffffff; /* Lighter shadow for top-left */
+  text-align: center;
+  flex: 1 1 300px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Hover effect for slight elevation */
+  box-shadow: 
+      12px 12px 24px #bebebe,  /* Enhanced darker shadow for bottom-right */
+      -12px -12px 24px #ffffff; /* Enhanced lighter shadow for top-left */
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  background: rgba(110, 99, 99, 0.311); /* Silver and transparent */
+  padding: 30px;
+  margin: 50px;
+  border-radius: 15px;
+}
+
+.project {
+  width: 300px;
+  height: 400px;
+  background-color: rgba(10, 10, 10, 0.8); /* Light background with some transparency */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+.project-info {
+  padding: 10px;
+  background-color: #182447; /* Default background color for the button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%; /* 10% of the project box height */
+  bottom: 0%;
+  }
+
+.view-project {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 5%, rgba(11,32,91,1) 24%, rgba(87,63,99,1) 96%);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.view-project:hover {
+  background: #560f7e; /* On hover, change to blue */
+  color: #fff; /* Keep text white */
+}
+
+.view-project:visited {
+  background: #12182b; /* When the link is visited */
+  color: #fff;
+}
+/* Button Styling */
+/* Style for the "Some Other Div" */
+
+
+/* Hire Me Button Styling */
+.hire-me-button {
+  display: block; /* Ensure it is on a new line */
+  margin-top: 10px; /* Space between previous section and button */
+  margin-bottom: 30px;
+  text-align: center; /* Center the button */
+}
+
+.hire-me-button button {
+  background-color: #3c0b54; /* Purple background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Fira Code', monospace;
+}
+
+.hire-me-button button:hover {
+  background-color: #5d2272; /* Slightly lighter purple on hover */
+}
+
+/* Contact Form Section Styling */
+.contact-form-section { display: flex; justify-content: center; align-items: center; padding: 20px; } 
+.contact-form-container { background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px); border-radius: 15px; padding: 30px; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); max-width: 500px; width: 100%; } 
+  .contact-form-container h2 { margin-bottom: 20px; color: #eceef4; text-align: center; } 
+  .contact-form-container label { display: block; margin-bottom: 8px; color: #ffffff; font-weight: bold; } 
+  .contact-form-container input, 
+  .contact-form-container textarea { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; } 
+  .contact-form-container textarea { resize: none; height: 100px; } 
+  .submit-button { background: linear-gradient(90deg, rgba(24,36,71,1) 0%, rgba(174,11,255,1) 100%); 
+    color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: fit-content; font-size: 16px; display: block; margin: auto;} 
+  .submit-button:hover { background:  #291630; } 
+  @media (max-width: 600px) { .contact-form-container { padding: 20px; }}
+
+  
